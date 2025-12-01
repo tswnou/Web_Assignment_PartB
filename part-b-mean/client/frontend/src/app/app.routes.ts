@@ -13,4 +13,5 @@ export const routes: Routes = [
   { path: 'books', component: BooksComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'about', component: AboutComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
