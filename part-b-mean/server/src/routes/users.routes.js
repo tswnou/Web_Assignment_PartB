@@ -1,16 +1,9 @@
-import express from "express";
-import User from "../models/User.js";
+import { Router } from "express";
+import { registerUser, getUsers } from "../controllers/users.controller.js";
 
-const router = express.Router();
+const router = Router();
 
-// Create User
-router.post("/", async (req, res) => {
-  try {
-    const user = await User.create(req.body);
-    res.json(user);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+router.get("/", getUsers);
+router.post("/", registerUser);
 
 export default router;
