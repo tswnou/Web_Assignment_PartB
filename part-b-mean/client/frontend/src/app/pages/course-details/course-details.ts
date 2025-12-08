@@ -8,7 +8,7 @@ import { CourseService } from '../../services/course';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './course-details.html',
-  styleUrls: ['./course-details.css']
+  //styleUrls: ['./course-details.css']
 })
 export class CourseDetailsComponent implements OnInit {
 

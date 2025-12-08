@@ -7,7 +7,9 @@ export const videos: Video[] = [
     description: "A beginner-friendly explanation of how computers operate.",
     duration: "1:20",
     category: "Computer Science",
-    youtubeLink: "https://www.youtube.com/watch?v=OAx_6-wdslM"
+    youtubeLink: "https://www.youtube.com/watch?v=OAx_6-wdslM",
+    thumbnail: "assets/img/videos/some-image.jpg"
+
   },
   {
     id: 8002,
@@ -15,7 +17,9 @@ export const videos: Video[] = [
     description: "Harvard’s CS50 course introduction.",
     duration: "1:00:51:37",
     category: "Computer Science",
-    youtubeLink: "https://www.youtube.com/watch?v=8mAITcNt710"
+    youtubeLink: "https://www.youtube.com/watch?v=8mAITcNt710",
+    thumbnail: "assets/img/videos/some-image.jpg"
+
   },
   {
     id: 8101,
@@ -23,7 +27,9 @@ export const videos: Video[] = [
     description: "MIT's famous linear algebra course.",
     duration: "39:48",
     category: "Mathematics",
-    youtubeLink: "https://www.youtube.com/watch?v=ZK3O402wf1c"
+    youtubeLink: "https://www.youtube.com/watch?v=ZK3O402wf1c",
+    thumbnail: "assets/img/videos/some-image.jpg"
+
   },
   {
     id: 8102,
@@ -31,7 +37,9 @@ export const videos: Video[] = [
     description: "Understanding basic concepts of calculus.",
     duration: "22:19",
     category: "Mathematics",
-    youtubeLink: "https://www.youtube.com/watch?v=3d6DsjIBzJ4"
+    youtubeLink: "https://www.youtube.com/watch?v=3d6DsjIBzJ4",
+    thumbnail: "assets/img/videos/some-image.jpg"
+
   },
   {
     id: 8201,
@@ -39,7 +47,9 @@ export const videos: Video[] = [
     description: "A full course for beginners.",
     duration: "5:22:08",
     category: "Algorithms",
-    youtubeLink: "https://www.youtube.com/watch?v=8hly31xKli0"
+    youtubeLink: "https://www.youtube.com/watch?v=8hly31xKli0",
+    thumbnail: "assets/img/videos/some-image.jpg"
+
   },
   {
     id: 8202,
@@ -47,6 +57,8 @@ export const videos: Video[] = [
     description: "Graph pathfinding explained with animation.",
     duration: "10:42",
     category: "Algorithms",
-    youtubeLink: "https://www.youtube.com/watch?v=GazC3A4OQTE"
+    youtubeLink: "https://www.youtube.com/watch?v=GazC3A4OQTE",
+    thumbnail: "assets/img/videos/some-image.jpg"
+
   }
 ];

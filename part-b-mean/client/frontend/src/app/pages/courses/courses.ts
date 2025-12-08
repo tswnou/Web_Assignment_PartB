@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CourseService } from '../../services/course';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './courses.html',
-  styleUrls: ['./courses.css']
+  //styleUrls: ['./courses.css']
 })
 export class CoursesComponent implements OnInit {
 

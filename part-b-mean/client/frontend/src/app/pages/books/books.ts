@@ -15,7 +15,7 @@ import { Video } from '../../../models/video';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './books.html',
-  styleUrls: ['./books.css']
+  //styleUrls: ['./books.css']
 })
 export class BooksComponent implements OnInit {
 

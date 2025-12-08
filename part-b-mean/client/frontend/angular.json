@@ -25,7 +25,16 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/theme.css",
+              "src/assets/css/layout.css",
+              "src/assets/css/components.css",
+              "src/assets/css/home.css",
+              "src/assets/css/courses.css",
+              "src/assets/css/books.css",
+              "src/assets/css/about.css",
+              "src/assets/css/course-details.css",
+              "src/assets/css/reset.css"
             ]
           },
           "configurations": {

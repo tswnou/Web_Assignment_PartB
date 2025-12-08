@@ -4,15 +4,22 @@
   <header class="header">
     <div class="container header-container">
 
+      <!-- Logo -->
       <div class="logo">
-        <a routerLink="/"><img src="assets/img/logo.png" alt="E-Learning Logo"></a>
+        <a routerLink="/">
+          <img src="assets/img/logo.png" alt="E-Learning Logo">
+        </a>
       </div>
 
-      <!-- Mobile menu -->
-      <button class="menu-toggle" (click)="toggleMenu()">
-        <img src="assets/img/menu-icon.png" alt="Open Menu">
+      <!-- Mobile Menu Button -->
+      <button
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        aria-label="Open navigation menu">
+        <img src="assets/img/menu-icon.png" alt="" role="presentation">
       </button>
 
+      <!-- Navigation -->
       <nav class="nav" [class.open]="menuOpen">
         <ul>
           <li><a routerLink="/">Home</a></li>
@@ -26,22 +33,24 @@
     </div>
   </header>
 
-  <!-- TOP BANNER -->
+  <!-- TOP BANNER (με την εικόνα από layout.css) -->
   <div class="top-banner"></div>
 
-  <!-- HERO SECTION -->
   <main>
 
+    <!-- HERO SECTION -->
     <section class="hero-banner">
       <h2>Learn Computer Science with Modern E-Learning</h2>
+
       <p>Courses, books, videos and educational material in one complete platform.</p>
+
       <a routerLink="/register" class="btn-primary">Get Started</a>
     </section>
 
     <!-- WHY SECTION -->
     <section class="why-section">
-
       <h2>Why Choose Our Platform?</h2>
+
       <p class="why-subtitle">
         A modern and friendly learning environment for Informatics students.
       </p>
@@ -71,7 +80,6 @@
       </div>
 
       <a routerLink="/courses" class="why-btn">Browse Courses →</a>
-
     </section>
 
   </main>

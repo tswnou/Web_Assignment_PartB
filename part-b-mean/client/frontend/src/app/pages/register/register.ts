@@ -8,7 +8,7 @@ import { RegisterService } from '../../services/register';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './register.html',
-  styleUrls: ['./register.css']
+  //styleUrls: ['./register.css']
 })
 export class RegisterComponent {
 

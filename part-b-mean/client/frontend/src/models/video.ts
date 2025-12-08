@@ -5,4 +5,5 @@ export interface Video {
   duration: string;
   category: string;
   youtubeLink: string;
+  thumbnail: string;
 }
