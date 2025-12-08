@@ -9,7 +9,7 @@
       </div>
 
       <button class="menu-toggle" (click)="toggleMenu()">
-        <img src="assets/img/menu-icon.png" alt="menu">
+        <img src="assets/img/menu-icon.png" alt="Open Menu">
       </button>
 
       <nav class="nav" [class.open]="menuOpen">
@@ -18,7 +18,7 @@
           <li><a routerLink="/courses">Courses</a></li>
           <li><a routerLink="/books">Books & Videos</a></li>
           <li><a routerLink="/about">About Us</a></li>
-          <li><a class="active" routerLink="/register" class="btn-primary">Register</a></li>
+          <li><a routerLink="/register" class="active btn-primary">Register</a></li>
         </ul>
       </nav>
 
@@ -33,14 +33,14 @@
       <h2>Create an Account</h2>
       <p>Fill in your details to get started.</p>
 
-      <!-- Angular form -->
+      <!-- Angular Form -->
       <form class="register-form" (ngSubmit)="submitForm()">
 
-        <!-- NAME ROW -->
+        <!-- NAME -->
         <div class="form-row">
           <div class="form-field">
             <label for="firstName">First Name</label>
-            <input 
+            <input
               type="text"
               id="firstName"
               required
@@ -82,12 +82,62 @@
 
             <select
               id="interest"
-              [(ngModel)]="formData.interest"
               name="interest"
-              class="filter-select"
               required
+              [(ngModel)]="formData.interest"
             >
-              <option value="" disabled>Select...</option>
+              <option value="" disabled selected>Select...</option>
               <option>Programming</option>
               <option>Networks</option>
-              <option>Data Science</
+              <option>Data Science</option>
+              <option>Cybersecurity</option>
+              <option>Software Engineering</option>
+            </select>
+
+          </div>
+        </div>
+
+        <!-- PASSWORDS -->
+        <div class="form-row">
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              minlength="6"
+              required
+              [(ngModel)]="formData.password"
+              name="password"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              minlength="6"
+              required
+              [(ngModel)]="formData.confirmPassword"
+              name="confirmPassword"
+            >
+          </div>
+        </div>
+
+        <!-- BUTTON -->
+        <button type="submit" class="btn-primary btn-register">
+          Register
+        </button>
+
+        <!-- SUCCESS MESSAGE -->
+        <p *ngIf="success" class="success-msg">
+          Registration completed successfully!
+        </p>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</section>

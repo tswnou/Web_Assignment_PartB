@@ -36,7 +36,7 @@ export class CoursesComponent implements OnInit {
     this.courseService.getCourses().subscribe({
       next: data => {
         this.courses = data;
-        this.filteredCourses = data;
+        this.filterCourses();   
       },
       error: err => console.error('Error loading courses:', err)
     });

@@ -32,7 +32,7 @@ export class RegisterComponent {
 
   submitForm() {
     if (this.formData.password !== this.formData.confirmPassword) {
-      alert("Passwords do not match");
+      alert("Passwords do not match!");
       return;
     }
 
@@ -40,12 +40,16 @@ export class RegisterComponent {
       name: `${this.formData.firstName} ${this.formData.lastName}`,
       email: this.formData.email,
       password: this.formData.password,
-      interests: [this.formData.interest]
+      interests: [this.formData.interest]   // ✔ backend expects array
     };
 
     this.registerService.registerUser(payload).subscribe({
-      next: () => this.success = true,
-      error: () => alert("Registration failed")
+      next: () => {
+        this.success = true;
+      },
+      error: () => {
+        alert("Registration failed");
+      }
     });
   }
 }

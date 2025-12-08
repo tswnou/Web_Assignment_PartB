@@ -1,25 +1,19 @@
 import { Routes } from '@angular/router';
+
+// PAGES
 import { HomeComponent } from './pages/home/home';
 import { CoursesComponent } from './pages/courses/courses';
-import { CourseDetailsComponent } from './pages/course-details/course-details';
 import { BooksComponent } from './pages/books/books';
-import { RegisterComponent } from './pages/register/register';
 import { AboutComponent } from './pages/about/about';
+import { RegisterComponent } from './pages/register/register';
+import { CourseDetailsComponent } from './pages/course-details/course-details';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
-  { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'books', component: BooksComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '' }, // wildcard για undefined routes
-  { path: '', component: HomeComponent },
-  { path: '', component: HomeComponent },
-  { path: 'courses', component: CoursesComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'books', component: BooksComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'course/:id', component: CourseDetailsComponent }
+  { path: 'course/:id', component: CourseDetailsComponent }, 
+  { path: '**', redirectTo: '' }   // fallback route
 ];
-

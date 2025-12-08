@@ -15,4 +15,5 @@ export class HomeComponent {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+  
 }

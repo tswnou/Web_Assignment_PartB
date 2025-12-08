@@ -2,8 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { books } from '../../../assets/data/books';
-import { videos } from '../../../assets/data/videos';
+import { books } from '../../../assets/js/data/books';
+import { videos } from '../../../assets/js/data/videos';
+
+import { Book } from '../../../models/book';
+import { Video } from '../../../models/video';
+
+
 
 @Component({
   selector: 'app-books',
@@ -27,15 +32,15 @@ export class BooksComponent implements OnInit {
 
   selectedCategory = 'All Categories';
 
-  filteredBooks = [];
-  filteredVideos = [];
+  filteredBooks: Book[] = [];
+  filteredVideos: Video[] = [];
 
-  recommendedBooks = [];
-  recommendedVideos = [];
+  recommendedBooks: Book[] = [];
+  recommendedVideos: Video[] = [];
 
   ngOnInit() {
-    this.recommendedBooks = books.filter(b => b.recommended);
-    this.recommendedVideos = videos.filter(v => v.recommended);
+    this.recommendedBooks = books.slice(0, 3);
+    this.recommendedVideos = videos.slice(0, 3);
 
     this.filterAll();
   }
@@ -53,13 +58,13 @@ export class BooksComponent implements OnInit {
     this.filteredBooks =
       this.selectedCategory === 'All Categories'
         ? books
-        : books.filter(b => b.category === this.selectedCategory);
+        : books.filter((b: Book) => b.category === this.selectedCategory);
   }
 
   filterVideos() {
     this.filteredVideos =
       this.selectedCategory === 'All Categories'
         ? videos
-        : videos.filter(v => v.category === this.selectedCategory);
+        : videos.filter((v: Video) => v.category === this.selectedCategory);
   }
 }
