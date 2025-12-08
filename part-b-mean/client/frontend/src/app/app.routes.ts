@@ -13,6 +13,13 @@ export const routes: Routes = [
   { path: 'books', component: BooksComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '' } // wildcard για undefined routes
+  { path: '**', redirectTo: '' }, // wildcard για undefined routes
+  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'courses', component: CoursesComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'books', component: BooksComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'course/:id', component: CourseDetailsComponent }
 ];
 

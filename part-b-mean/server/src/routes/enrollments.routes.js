@@ -4,8 +4,12 @@ import Enrollment from "../models/Enrollment.js";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const enrollment = await Enrollment.create(req.body);
-  res.json(enrollment);
+  try {
+    const enrollment = await Enrollment.create(req.body);
+    res.status(201).json(enrollment);
+  } catch (err) {
+    res.status(400).json({ error: "Enrollment failed" });
+  }
 });
 
 export default router;
