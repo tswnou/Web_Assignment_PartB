@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RegisterService } from '../../services/register';
+import { FormsModule } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './register.html',
-  //styleUrls: ['./register.css']
+  
 })
 export class RegisterComponent {
 
@@ -24,32 +24,38 @@ export class RegisterComponent {
     confirmPassword: ''
   };
 
-  constructor(private registerService: RegisterService) {}
+  constructor(private api: ApiService) {}
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
   submitForm() {
+
     if (this.formData.password !== this.formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
 
-    const payload = {
-      name: `${this.formData.firstName} ${this.formData.lastName}`,
+    const dataToSend = {
+      firstName: this.formData.firstName,
+      lastName: this.formData.lastName,
       email: this.formData.email,
-      password: this.formData.password,
-      interests: [this.formData.interest]   // ✔ backend expects array
+      interest: this.formData.interest,
+      password: this.formData.password
     };
 
-    this.registerService.registerUser(payload).subscribe({
-      next: () => {
+    this.api.registerUser(dataToSend).subscribe({
+      next: (res) => {
+        console.log(res);
         this.success = true;
       },
-      error: () => {
-        alert("Registration failed");
+      error: (err) => {
+        console.error(err);
+        alert("Registration failed!");
       }
     });
+
   }
+
 }

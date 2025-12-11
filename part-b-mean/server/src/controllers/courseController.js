@@ -1,22 +1,28 @@
-import { Course } from "../models/Course.js";
+import Course from "../models/Course.js";
 
-// GET all courses
+// GET ALL COURSES
 export const getAllCourses = async (req, res) => {
   try {
-    const courses = await Course.find();
+    const courses = await Course.find({});
     res.json(courses);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching courses", error });
+    console.error("Error fetching courses:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };
 
-// GET one course by ID
+// GET COURSE BY ID
 export const getCourseById = async (req, res) => {
   try {
-    const course = await Course.findById(req.params.id);
-    if (!course) return res.status(404).json({ message: "Course not found" });
+    const course = await Course.findOne({ id: req.params.id });
+
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
     res.json(course);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching course", error });
+    console.error("Error fetching course:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };

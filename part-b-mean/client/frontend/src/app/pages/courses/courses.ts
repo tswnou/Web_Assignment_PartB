@@ -1,42 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';   // ✅ ΠΡΟΣΘΗΚΗ
+import { RouterModule } from '@angular/router';
 
-import { courses, Course } from '../../../assets/js/data/courses';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule        // ✅ ΠΡΟΣΘΗΚΗ
-  ],
-  templateUrl: './courses.html'
+  imports: [CommonModule, FormsModule, RouterModule],
+  templateUrl: './courses.html',
+  styleUrls: ['../../../assets/css/courses.css']
+
 })
 export class CoursesComponent implements OnInit {
 
   menuOpen = false;
 
-  tracks = [
-    "All Tracks",
-    "Data Science & Applied Math",
-    "Operations Research",
-    "Applied Mathematics",
-    "Theoretical Computer Science",
-    "Systems & Networks",
-    "Software Systems",
-    "Data & Knowledge Management",
-    "Cybersecurity"
-  ];
-
+  tracks: string[] = [];
   selectedTrack = "All Tracks";
 
-  courses: Course[] = courses;
-  filteredCourses: Course[] = [...courses];
+  courses: any[] = [];
+  filteredCourses: any[] = [];
 
-  ngOnInit() {}
+  constructor(private api: ApiService) {}
+
+  ngOnInit() {
+    this.api.getCourses().subscribe({
+    next: (data: any[]) => {
+
+    this.courses = data;
+    this.filteredCourses = data;
+
+    this.tracks = [
+      "All Tracks",
+      ...Array.from(new Set(data.map((c: any) => c.category)))
+    ];
+  },
+  error: (err) => console.error(err)
+});
+
+  }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
