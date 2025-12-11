@@ -1,31 +1,5 @@
 <section class="courses-page">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-
-      <div class="logo">
-        <a routerLink="/"><img src="assets/img/logo.png" alt="E-Learning Logo"></a>
-      </div>
-
-      <button class="menu-toggle" (click)="toggleMenu()">
-        <img src="assets/img/menu-icon.png" alt="Open Menu">
-      </button>
-
-      <nav class="nav" [class.open]="menuOpen">
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a class="active" routerLink="/courses">Courses</a></li>
-          <li><a routerLink="/books">Books & Videos</a></li>
-          <li><a routerLink="/about">About Us</a></li>
-          <li><a routerLink="/register" class="btn-primary">Register</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- MAIN -->
   <main class="container">
 
     <section class="courses-hero">
@@ -43,7 +17,7 @@
           [(ngModel)]="selectedTrack"
           (change)="filterCourses()"
         >
-          <option value="All Tracks">All Tracks</option>
+          
           <option *ngFor="let t of tracks" [value]="t">{{ t }}</option>
         </select>
       </div>
@@ -57,7 +31,7 @@
 
           <span class="category-tag">{{ course.category }}</span>
 
-          <a class="btn-secondary" [routerLink]="['/course', course._id]">
+          <a class="btn-secondary" [routerLink]="['/course', course.id]">
             Learn More
           </a>
         </div>

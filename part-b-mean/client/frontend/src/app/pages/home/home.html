@@ -1,87 +1,50 @@
 <section class="home-page">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
+  <!-- HERO -->
+  <div class="top-banner">
+    <img src="assets/img/banner.png" alt="Hero banner">
+  </div>
 
-      <!-- Logo -->
-      <div class="logo">
-        <a routerLink="/">
-          <img src="assets/img/logo.png" alt="E-Learning Logo">
-        </a>
+  <section class="hero-banner">
+    <h2>Learn Computer Science with Modern E-Learning</h2>
+    <p>Courses, books, videos and educational material in one complete platform.</p>
+
+    <!-- Goes to Register -->
+    <a routerLink="/register" class="btn-primary">Get Started</a>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="why-section">
+    <h2>Why Choose Us?</h2>
+    <p class="why-subtitle">High quality educational material for every CS student</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <img src="assets/img/ico1.png" alt="">
+        <h3>Top Courses</h3>
+        <p>University–level structured learning.</p>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button
-        class="menu-toggle"
-        (click)="toggleMenu()"
-        aria-label="Open navigation menu">
-        <img src="assets/img/menu-icon.png" alt="" role="presentation">
-      </button>
+      <div class="why-card">
+        <img src="assets/img/ico2.png" alt="">
+        <h3>Books</h3>
+        <p>Best textbooks for CS subjects.</p>
+      </div>
 
-      <!-- Navigation -->
-      <nav class="nav" [class.open]="menuOpen">
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/courses">Courses</a></li>
-          <li><a routerLink="/books">Books & Videos</a></li>
-          <li><a routerLink="/about">About Us</a></li>
-          <li><a routerLink="/register" class="btn-primary">Register</a></li>
-        </ul>
-      </nav>
+      <div class="why-card">
+        <img src="assets/img/ico3.png" alt="">
+        <h3>Video Tutorials</h3>
+        <p>Crash courses & lectures from experts.</p>
+      </div>
 
+      <div class="why-card">
+        <img src="assets/img/ico4.png" alt="">
+        <h3>Easy Access</h3>
+        <p>Everything organized in one platform.</p>
+      </div>
     </div>
-  </header>
 
-  <!-- TOP BANNER (με την εικόνα από layout.css) -->
-  <div class="top-banner"></div>
-
-  <main>
-
-    <!-- HERO SECTION -->
-    <section class="hero-banner">
-      <h2>Learn Computer Science with Modern E-Learning</h2>
-
-      <p>Courses, books, videos and educational material in one complete platform.</p>
-
-      <a routerLink="/register" class="btn-primary">Get Started</a>
-    </section>
-
-    <!-- WHY SECTION -->
-    <section class="why-section">
-      <h2>Why Choose Our Platform?</h2>
-
-      <p class="why-subtitle">
-        A modern and friendly learning environment for Informatics students.
-      </p>
-
-      <div class="why-grid">
-
-        <div class="why-card">
-          <h3>Structured Learning</h3>
-          <p>Well-organized study tracks covering all Informatics subjects.</p>
-        </div>
-
-        <div class="why-card">
-          <h3>Rich Materials</h3>
-          <p>Books, videos, exercises and guides — all in one place.</p>
-        </div>
-
-        <div class="why-card">
-          <h3>User Friendly</h3>
-          <p>Clean and modern interface designed for effortless studying.</p>
-        </div>
-
-        <div class="why-card">
-          <h3>Free & Accessible</h3>
-          <p>Access the entire platform anytime, from any device.</p>
-        </div>
-
-      </div>
-
-      <a routerLink="/courses" class="why-btn">Browse Courses →</a>
-    </section>
-
-  </main>
+    <a routerLink="/courses" class="why-btn">Browse Courses →</a>
+  </section>
 
 </section>

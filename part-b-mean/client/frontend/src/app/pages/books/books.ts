@@ -8,12 +8,14 @@ import { videos } from '../../../assets/js/data/videos';
 import { Book } from '../../../models/book';
 import { Video } from '../../../models/video';
 
+import { RouterModule } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-books',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './books.html',
   //styleUrls: ['./books.css']
 })

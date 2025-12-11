@@ -1,2 +1,31 @@
-<!-- src/app/app.html -->
+<header class="header">
+  <div class="container header-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <a routerLink="/" routerLinkActive="active-link">
+        <img src="assets/img/logo.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- MENU BUTTON -->
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <img src="assets/img/menu-icon.png" alt="">
+    </button>
+
+    <!-- SIDE MENU -->
+    <nav class="nav" [class.open]="menuOpen">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" (click)="toggleMenu()">Home</a></li>
+        <li><a routerLink="/courses" routerLinkActive="active" (click)="toggleMenu()">Courses</a></li>
+        <li><a routerLink="/books" routerLinkActive="active" (click)="toggleMenu()">Books & Videos</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="toggleMenu()">About Us</a></li>
+        <li><a routerLink="/register" routerLinkActive="active" (click)="toggleMenu()">Register</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- CENTRAL CONTENT -->
 <router-outlet></router-outlet>

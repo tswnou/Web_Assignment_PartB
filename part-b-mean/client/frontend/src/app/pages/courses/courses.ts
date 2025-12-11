@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CourseService } from '../../services/course';
-import { RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';   // ✅ ΠΡΟΣΘΗΚΗ
 
+import { courses, Course } from '../../../assets/js/data/courses';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './courses.html',
-  //styleUrls: ['./courses.css']
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule        // ✅ ΠΡΟΣΘΗΚΗ
+  ],
+  templateUrl: './courses.html'
 })
 export class CoursesComponent implements OnInit {
 
   menuOpen = false;
 
-  courses: any[] = [];
-  filteredCourses: any[] = [];
-
-  tracks: string[] = [
+  tracks = [
+    "All Tracks",
     "Data Science & Applied Math",
     "Operations Research",
     "Applied Mathematics",
@@ -32,17 +33,10 @@ export class CoursesComponent implements OnInit {
 
   selectedTrack = "All Tracks";
 
-  constructor(private courseService: CourseService) {}
+  courses: Course[] = courses;
+  filteredCourses: Course[] = [...courses];
 
-  ngOnInit() {
-    this.courseService.getCourses().subscribe({
-      next: data => {
-        this.courses = data;
-        this.filterCourses();   
-      },
-      error: err => console.error('Error loading courses:', err)
-    });
-  }
+  ngOnInit() {}
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

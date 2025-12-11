@@ -1,34 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CourseService } from '../../services/course';
+import { ActivatedRoute } from '@angular/router';
+import { courses, Course } from '../../../assets/js/data/courses';
+
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-course-details',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './course-details.html',
-  //styleUrls: ['./course-details.css']
+  imports: [CommonModule, RouterModule],
+  templateUrl: './course-details.html'
 })
 export class CourseDetailsComponent implements OnInit {
 
   menuOpen = false;
-  course: any = null;
+  course: Course | undefined;
 
-  constructor(
-    private route: ActivatedRoute,
-    private courseService: CourseService
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-
-    if (id) {
-      this.courseService.getCourseById(id).subscribe({
-        next: data => this.course = data,
-        error: err => console.error("Error loading course:", err)
-      });
-    }
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.course = courses.find(c => c.id === id);
   }
 
   toggleMenu() {

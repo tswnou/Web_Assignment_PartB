@@ -1,4 +1,4 @@
-//Λίστα με όλες τις κατηγορίες μαθημάτων
+/*  //Λίστα με όλες τις κατηγορίες μαθημάτων
 
 const categories = [
     "Data Science & Applied Math",
@@ -197,4 +197,4 @@ const courses = [
         ects: 6,
         category: "Cybersecurity"
     }
-];
+];  */

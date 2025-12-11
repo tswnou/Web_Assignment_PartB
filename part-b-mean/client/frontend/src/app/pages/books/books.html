@@ -1,43 +1,5 @@
 <section class="books-page">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-
-      <!-- Logo -->
-      <div class="logo">
-        <a routerLink="/">
-          <img 
-            src="assets/img/logo.png" 
-            alt="E-Learning Logo"
-            title="E-Learning Home"
-          >
-        </a>
-      </div>
-
-      <!-- Mobile Menu Toggle -->
-      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation menu">
-        <img 
-          src="assets/img/menu-icon.png" 
-          alt=""
-          role="presentation"
-        >
-      </button>
-
-      <!-- Navigation -->
-      <nav class="nav" [class.open]="menuOpen">
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/courses">Courses</a></li>
-          <li><a class="active" routerLink="/books">Books & Videos</a></li>
-          <li><a routerLink="/about">About Us</a></li>
-          <li><a routerLink="/register" class="btn-primary">Register</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
   <!-- MAIN -->
   <main class="container">
 
@@ -67,11 +29,22 @@
       <!-- RECOMMENDED BOOKS -->
       <section class="recommended-section recommended-books">
         <h2 class="section-title">Recommended Books</h2>
-        <p class="section-description">Selected textbooks and references to deepen your knowledge.</p>
+        <p class="section-description">
+          Selected textbooks and references to deepen your knowledge.
+        </p>
 
         <div class="books-grid">
           <div class="book-card" *ngFor="let book of recommendedBooks">
-            <img class="book-cover" [src]="book.image" [alt]="book.title" />
+
+            <!-- FIXED ACCESSIBLE IMAGE -->
+            <img 
+              class="book-cover"
+              [src]="book.image"
+              [alt]="book.title"
+              [title]="book.title"
+              role="img"
+            />
+
             <div class="book-card-content">
               <h3>{{ book.title }}</h3>
               <p class="description">{{ book.description }}</p>
@@ -84,7 +57,16 @@
       <!-- ALL BOOKS -->
       <div class="books-grid">
         <div class="book-card" *ngFor="let book of filteredBooks">
-          <img class="book-cover" [src]="book.image" [alt]="book.title" />
+
+          <!-- FIXED ACCESSIBLE IMAGE -->
+          <img 
+            class="book-cover"
+            [src]="book.image"
+            [alt]="book.title"
+            [title]="book.title"
+            role="img"
+          />
+
           <div class="book-card-content">
             <h3>{{ book.title }}</h3>
             <p class="description">{{ book.description }}</p>
@@ -100,7 +82,16 @@
 
         <div class="videos-grid">
           <div class="video-card" *ngFor="let video of recommendedVideos">
-            <img class="video-thumb" [src]="video.thumbnail" [alt]="video.title" />
+
+            <!-- FIXED ACCESSIBLE IMAGE -->
+            <img 
+              class="video-thumb"
+              [src]="video.thumbnail"
+              [alt]="video.title"
+              [title]="video.title"
+              role="img"
+            />
+
             <div class="video-card-content">
               <h3>{{ video.title }}</h3>
               <p class="description">{{ video.description }}</p>
@@ -114,6 +105,7 @@
                 Watch Video
               </a>
             </div>
+
           </div>
         </div>
       </section>
@@ -121,7 +113,16 @@
       <!-- ALL VIDEOS -->
       <div class="videos-grid">
         <div class="video-card" *ngFor="let video of filteredVideos">
-          <img class="video-thumb" [src]="video.thumbnail" [alt]="video.title" />
+
+          <!-- FIXED ACCESSIBLE IMAGE -->
+          <img 
+            class="video-thumb"
+            [src]="video.thumbnail"
+            [alt]="video.title"
+            [title]="video.title"
+            role="img"
+          />
+
           <div class="video-card-content">
             <h3>{{ video.title }}</h3>
             <p class="description">{{ video.description }}</p>
@@ -135,6 +136,7 @@
               Watch Here
             </a>
           </div>
+
         </div>
       </div>
 

@@ -1,33 +1,5 @@
 <section class="about-page">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-
-      <!-- Logo -->
-      <div class="logo">
-        <a routerLink="/"><img src="assets/img/logo.png" alt="E-Learning Logo"></a>
-      </div>
-
-      <!-- Mobile Menu -->
-      <button class="menu-toggle" (click)="toggleMenu()">
-        <img src="assets/img/menu-icon.png" alt="Open Menu">
-      </button>
-
-      <!-- Navigation -->
-      <nav class="nav" [class.open]="menuOpen">
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/courses">Courses</a></li>
-          <li><a routerLink="/books">Books & Videos</a></li>
-          <li><a class="active" routerLink="/about">About Us</a></li>
-          <li><a routerLink="/register" class="btn-primary">Register</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
   <!-- MAIN CONTENT -->
   <main class="about-bg-wrapper">
     <div class="about-container">

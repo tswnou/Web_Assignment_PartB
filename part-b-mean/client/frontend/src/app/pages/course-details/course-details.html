@@ -1,55 +1,23 @@
 <section class="course-details-page">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-
-      <div class="logo">
-        <a routerLink="/"><img src="assets/img/logo.png" alt="E-Learning Logo"></a>
-      </div>
-
-      <button class="menu-toggle" (click)="toggleMenu()">
-        <img src="assets/img/menu-icon.png" alt="Open Menu">
-      </button>
-
-      <nav class="nav" [class.open]="menuOpen">
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/courses">Courses</a></li>
-          <li><a routerLink="/books">Books & Videos</a></li>
-          <li><a routerLink="/about">About Us</a></li>
-          <li><a routerLink="/register" class="btn-primary">Register</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- MAIN -->
   <main class="container">
 
-    <!-- COURSE DETAILS CARD -->
     <section class="course-details-box" *ngIf="course; else loading">
 
       <h2 class="page-header">{{ course.title }}</h2>
 
-      <p class="course-description">{{ course.description }}</p>
+      <p>{{ course.description }}</p>
 
-      <p class="course-category">
-        <strong>Category:</strong> {{ course.category }}
-      </p>
+      <p><strong>Category:</strong> {{ course.category }}</p>
 
-      <p class="course-level">
-        <strong>Level:</strong> {{ course.level }}
-      </p>
+      <p><strong>ECTS:</strong> {{ course.ects }}</p>
 
-      <a routerLink="/courses" class="btn-secondary back-btn">← Back to Courses</a>
+      <a class="btn-secondary" routerLink="/courses">← Back to Courses</a>
 
     </section>
 
-    <!-- LOADING STATE -->
     <ng-template #loading>
-      <p class="loading-text">Loading course details...</p>
+      <p>Loading course details...</p>
     </ng-template>
 
   </main>
