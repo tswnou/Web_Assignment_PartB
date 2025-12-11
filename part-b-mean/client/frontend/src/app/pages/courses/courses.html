@@ -17,14 +17,13 @@
           [(ngModel)]="selectedTrack"
           (change)="filterCourses()"
         >
-          
+          <option value="All Tracks">All Tracks</option>
           <option *ngFor="let t of tracks" [value]="t">{{ t }}</option>
         </select>
       </div>
 
       <!-- COURSES GRID -->
       <div class="courses-grid">
-
         <div class="course-card" *ngFor="let course of filteredCourses">
           <h3>{{ course.title }}</h3>
           <p class="description">{{ course.description }}</p>
@@ -35,7 +34,6 @@
             Learn More
           </a>
         </div>
-
       </div>
 
     </section>

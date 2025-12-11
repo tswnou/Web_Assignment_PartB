@@ -11,7 +11,6 @@ import { ApiService } from '../../services/api.service';
   imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './courses.html',
   styleUrls: ['../../../assets/css/courses.css']
-
 })
 export class CoursesComponent implements OnInit {
 
@@ -27,19 +26,14 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
     this.api.getCourses().subscribe({
-    next: (data: any[]) => {
+      next: (data: any[]) => {
+        this.courses = data;
+        this.filteredCourses = [...data];
 
-    this.courses = data;
-    this.filteredCourses = data;
-
-    this.tracks = [
-      "All Tracks",
-      ...Array.from(new Set(data.map((c: any) => c.category)))
-    ];
-  },
-  error: (err) => console.error(err)
-});
-
+        this.tracks = Array.from(new Set(data.map(c => c.category)));
+      },
+      error: (err) => console.error(err)
+    });
   }
 
   toggleMenu() {
@@ -48,7 +42,7 @@ export class CoursesComponent implements OnInit {
 
   filterCourses() {
     if (this.selectedTrack === "All Tracks") {
-      this.filteredCourses = this.courses;
+      this.filteredCourses = [...this.courses];
     } else {
       this.filteredCourses = this.courses.filter(
         c => c.category === this.selectedTrack

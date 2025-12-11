@@ -7,11 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HttpClientModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    HttpClientModule  
+  ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
-export class App {
+export class AppComponent {
   menuOpen = false;
 
   toggleMenu() {

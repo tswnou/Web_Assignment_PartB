@@ -2,23 +2,70 @@
 
   <main class="container">
 
-    <section class="course-details-box" *ngIf="course; else loading">
+    <!-- LOADING / ERROR STATES -->
+    <div *ngIf="isLoading" class="loading-message">
+      Loading course details…
+    </div>
 
-      <h2 class="page-header">{{ course.title }}</h2>
+    <div *ngIf="!isLoading && errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
 
-      <p>{{ course.description }}</p>
+    <!-- MAIN CONTENT -->
+    <section class="course-details" *ngIf="!isLoading && course">
 
-      <p><strong>Category:</strong> {{ course.category }}</p>
+      <header class="course-header">
+        <h2 class="page-header">{{ course.title }}</h2>
+        <p class="page-description">
+          Detailed information about this course in the e-Learning platform.
+        </p>
+      </header>
 
-      <p><strong>ECTS:</strong> {{ course.ects }}</p>
+      <div class="course-layout">
 
-      <a class="btn-secondary" routerLink="/courses">← Back to Courses</a>
+        <!-- LEFT: main info -->
+        <article class="course-main-card">
+          <h3 class="course-title">{{ course.title }}</h3>
+
+          <p class="course-description">
+            {{ course.description }}
+          </p>
+
+          <div class="course-meta">
+            <span class="category-tag">
+              {{ course.category }}
+            </span>
+
+            <span class="ects-badge">
+              {{ course.ects }} ECTS
+            </span>
+          </div>
+
+          <a routerLink="/courses" class="btn-secondary back-link">
+            ← Back to all courses
+          </a>
+        </article>
+
+        <!-- RIGHT: extra info (dummy text για να μοιάζει με Part A) -->
+        <aside class="course-side-card">
+          <h4>What you will learn</h4>
+          <ul>
+            <li>Core concepts of the {{ course.category }} track</li>
+            <li>How to apply theory in real-world problems</li>
+            <li>Preparation for advanced courses and projects</li>
+          </ul>
+
+          <h4>Course details</h4>
+          <ul class="info-list">
+            <li><strong>ID:</strong> {{ course.id }}</li>
+            <li><strong>ECTS:</strong> {{ course.ects }}</li>
+            <li><strong>Track:</strong> {{ course.category }}</li>
+          </ul>
+        </aside>
+
+      </div>
 
     </section>
-
-    <ng-template #loading>
-      <p>Loading course details...</p>
-    </ng-template>
 
   </main>
 

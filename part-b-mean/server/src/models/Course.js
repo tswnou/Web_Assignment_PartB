@@ -1,12 +1,11 @@
 import mongoose from "mongoose";
 
 const CourseSchema = new mongoose.Schema({
-  id: Number,
-  title: String,
-  description: String,
-  ects: Number,
-  category: String
+  id: { type: Number, required: true, unique: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  ects: { type: Number, required: true },
+  category: { type: String, required: true }
 });
 
-const Course = mongoose.model("Course", CourseSchema);
-export default Course;
+export default mongoose.model("Course", CourseSchema);
