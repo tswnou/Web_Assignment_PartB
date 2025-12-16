@@ -1,0 +1,18 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.page-with-banner {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      rgba(255, 240, 246, 0.85),
+      rgba(255, 240, 246, 0.85)
+    ),
+    url('/assets/img/courses-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}

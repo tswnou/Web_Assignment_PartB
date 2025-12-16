@@ -285,3 +285,18 @@ body.courses-page::before {
 }
 
 
+.page-banner {
+  min-height: calc(100vh - 80px); 
+  padding-top: 40px;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 240, 246, 0.9),
+      rgba(255, 240, 246, 0.9)
+    ),
+    url('/assets/img/courses-bg.jpg');
+
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}

@@ -2,71 +2,49 @@
 
   <main class="container">
 
-    <!-- LOADING / ERROR STATES -->
-    <div *ngIf="isLoading" class="loading-message">
-      Loading course details…
-    </div>
-
-    <div *ngIf="!isLoading && errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
-
-    <!-- MAIN CONTENT -->
     <section class="course-details" *ngIf="!isLoading && course">
 
-      <header class="course-header">
-        <h2 class="page-header">{{ course.title }}</h2>
-        <p class="page-description">
-          Detailed information about this course in the e-Learning platform.
-        </p>
-      </header>
+      <!-- HERO CARD -->
+      <div class="course-hero-card">
+        <h1 class="course-hero-title">{{ course.title }}</h1>
+        <p class="course-hero-desc">{{ course.description }}</p>
 
-      <div class="course-layout">
+        <div class="hero-badges">
+          <span class="badge">{{ course.category }}</span>
+          <span class="badge ects">{{ course.ects }} ECTS</span>
+        </div>
 
-        <!-- LEFT: main info -->
-        <article class="course-main-card">
-          <h3 class="course-title">{{ course.title }}</h3>
+        <a routerLink="/courses" class="btn-primary back-btn">
+          ← Back to all courses
+        </a>
+      </div>
 
-          <p class="course-description">
-            {{ course.description }}
-          </p>
+      <!-- CONTENT GRID -->
+      <div class="course-grid">
 
-          <div class="course-meta">
-            <span class="category-tag">
-              {{ course.category }}
-            </span>
-
-            <span class="ects-badge">
-              {{ course.ects }} ECTS
-            </span>
-          </div>
-
-          <a routerLink="/courses" class="btn-secondary back-link">
-            ← Back to all courses
-          </a>
-        </article>
-
-        <!-- RIGHT: extra info (dummy text για να μοιάζει με Part A) -->
-        <aside class="course-side-card">
-          <h4>What you will learn</h4>
+        <!-- LEFT -->
+        <div class="glass-card">
+          <h3>What you will learn</h3>
           <ul>
             <li>Core concepts of the {{ course.category }} track</li>
-            <li>How to apply theory in real-world problems</li>
-            <li>Preparation for advanced courses and projects</li>
+            <li>Hands-on problem solving</li>
+            <li>Preparation for advanced topics</li>
           </ul>
+        </div>
 
-          <h4>Course details</h4>
+        <!-- RIGHT -->
+        <div class="glass-card">
+          <h3>Course details</h3>
           <ul class="info-list">
             <li><strong>ID:</strong> {{ course.id }}</li>
             <li><strong>ECTS:</strong> {{ course.ects }}</li>
             <li><strong>Track:</strong> {{ course.category }}</li>
           </ul>
-        </aside>
+        </div>
 
       </div>
 
     </section>
 
   </main>
-
 </section>

@@ -1,4 +1,4 @@
-import { Router } from "express";
+/* import { Router } from "express";
 import { getAllCourses, getCourseById } from "../controllers/courses.controller.js";
 
 const router = Router();
@@ -9,4 +9,4 @@ router.get("/", getAllCourses);
 // GET COURSE BY ID (με id: 101, 102...)
 router.get("/:id", getCourseById);
 
-export default router;
+export default router; */

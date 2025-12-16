@@ -8,8 +8,9 @@
       <h2>Create an Account</h2>
       <p>Fill in your details to get started.</p>
 
+      
       <!-- Angular Form -->
-      <form class="register-form" (ngSubmit)="submitForm()">
+      <form class="register-form" (ngSubmit)="submitForm()" novalidate>
 
         <!-- NAME -->
         <div class="form-row">
@@ -108,6 +109,11 @@
         <p class="success-message" *ngIf="success">
             Registration completed successfully!
         </p>
+
+        <p class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </p>
+
 
 
       </form>

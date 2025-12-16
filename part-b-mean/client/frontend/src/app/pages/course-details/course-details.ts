@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
@@ -19,7 +19,8 @@ export class CourseDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private api: ApiService
+    private api: ApiService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -35,12 +36,13 @@ export class CourseDetailsComponent implements OnInit {
       next: (data) => {
         this.course = data;
         this.isLoading = false;
+        this.cdr.detectChanges(); //
       },
-      error: (err) => {
-        console.error(err);
+      error: () => {
         this.errorMessage = 'Could not load course details.';
         this.isLoading = false;
       }
     });
   }
 }
+

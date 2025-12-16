@@ -1,0 +1,16 @@
+.page-banner {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      rgba(255, 240, 246, 0.9),
+      rgba(255, 240, 246, 0.9)
+    ),
+    url('/assets/img/courses-bg.jpg');
+
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  padding-top: 140px; /* κάτω από header */
+}
+

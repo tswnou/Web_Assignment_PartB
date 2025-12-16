@@ -59,7 +59,7 @@ async function seedDB() {
     console.log("Inserting courses...");
     await Course.insertMany(courses);
 
-    console.log("🎉 Database Seeded Successfully!");
+    console.log("Database Seeded Successfully!");
     process.exit();
   } catch (err) {
     console.error(err);

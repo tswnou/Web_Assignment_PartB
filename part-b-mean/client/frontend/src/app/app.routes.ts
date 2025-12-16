@@ -1,19 +1,18 @@
 import { Routes } from '@angular/router';
-
-// PAGES
 import { HomeComponent } from './pages/home/home';
-import { CoursesComponent } from './pages/courses/courses';
 import { BooksComponent } from './pages/books/books';
-import { AboutComponent } from './pages/about/about';
-import { RegisterComponent } from './pages/register/register';
+import { CoursesComponent } from './pages/courses/courses';
 import { CourseDetailsComponent } from './pages/course-details/course-details';
+import { RegisterComponent } from './pages/register/register';
+import { AboutComponent } from './pages/about/about';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'courses', component: CoursesComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'books', component: BooksComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'courses', component: CoursesComponent },
+  { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'course/:id', component: CourseDetailsComponent }, 
-  { path: '**', redirectTo: '' }   // fallback route
+  { path: 'about', component: AboutComponent },
+  { path: '**', redirectTo: '' }
 ];
+

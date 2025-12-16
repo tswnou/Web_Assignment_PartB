@@ -1,31 +1,31 @@
+<!-- HEADER (σταθερό σε όλες τις σελίδες) -->
 <header class="header">
   <div class="container header-container">
 
-    <!-- LOGO -->
     <div class="logo">
-      <a routerLink="/" routerLinkActive="active-link">
+      <a routerLink="/">
         <img src="assets/img/logo.png" alt="Logo">
       </a>
     </div>
 
-    <!-- MENU BUTTON -->
-    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+    <button class="menu-toggle" (click)="toggleMenu()">
       <img src="assets/img/menu-icon.png" alt="">
     </button>
 
-    <!-- SIDE MENU -->
     <nav class="nav" [class.open]="menuOpen">
       <ul>
-        <li><a routerLink="/" routerLinkActive="active" (click)="toggleMenu()">Home</a></li>
-        <li><a routerLink="/courses" routerLinkActive="active" (click)="toggleMenu()">Courses</a></li>
-        <li><a routerLink="/books" routerLinkActive="active" (click)="toggleMenu()">Books & Videos</a></li>
-        <li><a routerLink="/about" routerLinkActive="active" (click)="toggleMenu()">About Us</a></li>
-        <li><a routerLink="/register" routerLinkActive="active" (click)="toggleMenu()">Register</a></li>
+        <li><a routerLink="/" (click)="toggleMenu()">Home</a></li>
+        <li><a routerLink="/courses" (click)="toggleMenu()">Courses</a></li>
+        <li><a routerLink="/books" (click)="toggleMenu()">Books & Videos</a></li>
+        <li><a routerLink="/about" (click)="toggleMenu()">About Us</a></li>
+        <li><a routerLink="/register" (click)="toggleMenu()">Register</a></li>
       </ul>
     </nav>
 
   </div>
 </header>
 
-<!-- CENTRAL CONTENT -->
-<router-outlet></router-outlet>
+
+<div [class.page-banner]="!isHome()">
+  <router-outlet></router-outlet>
+</div>

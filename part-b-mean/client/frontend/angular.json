@@ -36,7 +36,8 @@
               "src/assets/css/books.css",
               "src/assets/css/about.css",
               "src/assets/css/course-details.css",
-              "src/assets/css/reset.css"
+              "src/assets/css/reset.css",
+              "src/assets/css/page-banner.css"
             ]
           },
           "configurations": {

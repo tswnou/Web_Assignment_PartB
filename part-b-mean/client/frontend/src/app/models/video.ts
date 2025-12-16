@@ -1,9 +1,9 @@
 export interface Video {
-  id: number;
+  _id?: string;
   title: string;
   description: string;
-  duration: string;
   category: string;
-  youtubeLink: string;
   thumbnail: string;
+  duration: string;
+  youtubeLink: string;
 }

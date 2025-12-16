@@ -311,3 +311,40 @@ h1, h2, h3, p, label, a, span, div {
 }
 
 
+
+
+.video-thumb {
+  width: 100%;
+  max-height: 180px;     
+  object-fit: cover;    
+  border-radius: 12px;
+  display: block;
+}
+
+
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+
+.video-card {
+  padding: 1.2rem;
+}
+
+.video-card-content h3 {
+  font-size: 1.1rem;
+}
+
+.video-card-content .description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+

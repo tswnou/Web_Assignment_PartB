@@ -21,13 +21,20 @@
           [(ngModel)]="selectedCategory"
           (change)="filterAll()"
         >
-          <option value="All Categories">All Categories</option>
-          <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+          <option [value]="ALL_CATEGORIES">All Categories</option>
+          <option *ngFor="let cat of categories" [value]="cat">
+            {{ cat }}
+          </option>
         </select>
       </div>
 
+      <!-- ========================= -->
       <!-- RECOMMENDED BOOKS -->
-      <section class="recommended-section recommended-books">
+      <!-- ========================= -->
+      <section
+        class="recommended-section recommended-books"
+        *ngIf="selectedCategory === ALL_CATEGORIES"
+      >
         <h2 class="section-title">Recommended Books</h2>
         <p class="section-description">
           Selected textbooks and references to deepen your knowledge.
@@ -35,14 +42,11 @@
 
         <div class="books-grid">
           <div class="book-card" *ngFor="let book of recommendedBooks">
-
-            <!-- FIXED ACCESSIBLE IMAGE -->
-            <img 
+            <img
               class="book-cover"
               [src]="book.image"
               [alt]="book.title"
-              [title]="book.title"
-              role="img"
+              loading="lazy"
             />
 
             <div class="book-card-content">
@@ -54,17 +58,16 @@
         </div>
       </section>
 
+      <!-- ========================= -->
       <!-- ALL BOOKS -->
+      <!-- ========================= -->
       <div class="books-grid">
         <div class="book-card" *ngFor="let book of filteredBooks">
-
-          <!-- FIXED ACCESSIBLE IMAGE -->
-          <img 
+          <img
             class="book-cover"
             [src]="book.image"
             [alt]="book.title"
-            [title]="book.title"
-            role="img"
+            loading="lazy"
           />
 
           <div class="book-card-content">
@@ -75,21 +78,25 @@
         </div>
       </div>
 
+      <!-- ========================= -->
       <!-- RECOMMENDED VIDEOS -->
-      <section class="recommended-section">
+      <!-- ========================= -->
+      <section
+        class="recommended-section"
+        *ngIf="selectedCategory === ALL_CATEGORIES"
+      >
         <h2 class="section-title">Recommended Videos</h2>
-        <p class="section-description">Handpicked tutorials and lectures you may find useful.</p>
+        <p class="section-description">
+          Handpicked tutorials and lectures you may find useful.
+        </p>
 
         <div class="videos-grid">
           <div class="video-card" *ngFor="let video of recommendedVideos">
-
-            <!-- FIXED ACCESSIBLE IMAGE -->
-            <img 
+            <img
               class="video-thumb"
-              [src]="video.thumbnail"
+              [src]="getYoutubeThumbnail(video.youtubeLink)"
               [alt]="video.title"
-              [title]="video.title"
-              role="img"
+              loading="lazy"
             />
 
             <div class="video-card-content">
@@ -101,26 +108,29 @@
                 <span class="video-duration">{{ video.duration }}</span>
               </div>
 
-              <a class="btn-secondary" [href]="video.youtubeLink" target="_blank">
+              <a
+                class="btn-secondary"
+                [href]="video.youtubeLink"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Watch Video
               </a>
             </div>
-
           </div>
         </div>
       </section>
 
+      <!-- ========================= -->
       <!-- ALL VIDEOS -->
+      <!-- ========================= -->
       <div class="videos-grid">
         <div class="video-card" *ngFor="let video of filteredVideos">
-
-          <!-- FIXED ACCESSIBLE IMAGE -->
-          <img 
+          <img
             class="video-thumb"
-            [src]="video.thumbnail"
+            [src]="getYoutubeThumbnail(video.youtubeLink)"
             [alt]="video.title"
-            [title]="video.title"
-            role="img"
+            loading="lazy"
           />
 
           <div class="video-card-content">
@@ -132,16 +142,18 @@
               <span class="video-duration">{{ video.duration }}</span>
             </div>
 
-            <a class="btn-secondary" [href]="video.youtubeLink" target="_blank">
+            <a
+              class="btn-secondary"
+              [href]="video.youtubeLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Watch Here
             </a>
           </div>
-
         </div>
       </div>
 
     </section>
-
   </main>
-
 </section>

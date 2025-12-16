@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -22,7 +22,7 @@ export class CoursesComponent implements OnInit {
   courses: any[] = [];
   filteredCourses: any[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.api.getCourses().subscribe({
@@ -31,8 +31,13 @@ export class CoursesComponent implements OnInit {
         this.filteredCourses = [...data];
 
         this.tracks = Array.from(new Set(data.map(c => c.category)));
+
+        this.cdr.detectChanges();  //new
       },
-      error: (err) => console.error(err)
+      error: (err) => {
+        console.error(err);
+        this.cdr.detectChanges();
+      }
     });
   }
 
