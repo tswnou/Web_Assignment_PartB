@@ -30,32 +30,36 @@ export class RegisterComponent {
     this.menuOpen = !this.menuOpen;
   }
 
-  submitForm() {
+submitForm() {
 
-    if (this.formData.password !== this.formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+  // 🔥 ΠΟΛΥ ΣΗΜΑΝΤΙΚΟ
+  this.success = false;
 
-    const dataToSend = {
-      firstName: this.formData.firstName,
-      lastName: this.formData.lastName,
-      email: this.formData.email,
-      interest: this.formData.interest,
-      password: this.formData.password
-    };
-
-    this.api.registerUser(dataToSend).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.success = true;
-      },
-      error: (err) => {
-        console.error(err);
-        alert("Registration failed!");
-      }
-    });
-
+  if (this.formData.password !== this.formData.confirmPassword) {
+    alert("Passwords do not match!");
+    return;
   }
+
+  const dataToSend = {
+    firstName: this.formData.firstName,
+    lastName: this.formData.lastName,
+    email: this.formData.email,
+    interest: this.formData.interest,
+    password: this.formData.password
+  };
+
+  this.api.registerUser(dataToSend).subscribe({
+    next: (res) => {
+      console.log(res);
+      this.success = true;   // ✅ μόνο εδώ
+    },
+    error: (err) => {
+      console.error(err);
+      alert("Registration failed!");
+      this.success = false; // (προαιρετικό αλλά καθαρό)
+    }
+  });
+}
+
 
 }

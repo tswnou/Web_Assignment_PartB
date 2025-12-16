@@ -61,7 +61,7 @@
               required
               [(ngModel)]="formData.interest"
             >
-              <option value="" disabled selected>Select...</option>
+              <option value="" disabled>Select...</option>
               <option>Programming</option>
               <option>Networks</option>
               <option>Data Science</option>
@@ -105,9 +105,10 @@
         </button>
 
         <!-- SUCCESS MESSAGE -->
-        <p *ngIf="success" class="success-msg">
-          Registration completed successfully!
+        <p class="success-message" *ngIf="success">
+            Registration completed successfully!
         </p>
+
 
       </form>
 
