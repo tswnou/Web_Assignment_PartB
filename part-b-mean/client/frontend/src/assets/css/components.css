@@ -696,3 +696,13 @@
 }
 
 
+.card {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 14px 40px rgba(200,80,192,0.18);
+  transition: transform .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}

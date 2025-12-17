@@ -268,5 +268,23 @@
 }
 
 
+main.container {
+  padding: 4rem 2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+.page-header {
+  margin-bottom: 1rem;
+}
+
+.page-description {
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+
 
 

@@ -348,3 +348,13 @@ h1, h2, h3, p, label, a, span, div {
 
 
 
+.book-card,
+.video-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-card:hover,
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
