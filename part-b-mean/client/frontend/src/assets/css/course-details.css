@@ -39,7 +39,7 @@
 
 
 .course-details-page {
-  padding-top: 140px; /* ⬅ αρκετό για header + banner */
+  padding-top: 140px; 
 }
 
 
@@ -54,7 +54,6 @@
   padding-top: 160px;
 }
 
-/* HERO */
 .course-hero-card {
   background: rgba(255, 230, 243, 0.9);
   border-radius: 28px;
@@ -127,7 +126,6 @@
   margin-top: 20px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .course-grid {
     grid-template-columns: 1fr;

@@ -1,59 +1,175 @@
-# Frontend
+~~~~~~E-Learning Platform – Μέρος Β (MEAN Stack)~~~~~~~
+Περιγραφή έργου
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Η παρούσα εργασία αφορά την υλοποίηση μιας υπηρεσίας ηλεκτρονικής μάθησης (e-learning) για μαθήματα Πληροφορικής.
+Η εφαρμογή επιτρέπει στον χρήστη να:
 
-## Development server
+περιηγείται σε μαθήματα οργανωμένα ανά κατηγορία
 
-To start a local development server, run:
+βλέπει αναλυτικές πληροφορίες για κάθε μάθημα
 
-```bash
-ng serve
-```
+περιηγείται σε βιβλία και εκπαιδευτικά βίντεο
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+εγγράφεται στην πλατφόρμα μέσω φόρμας χρήστη
 
-## Code scaffolding
+Το έργο υλοποιήθηκε σε δύο μέρη:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+-Μέρος Α: στατικός frontend ιστότοπος (HTML, CSS, JavaScript)
 
-```bash
-ng generate component component-name
-```
+-Μέρος Β: πλήρης client–server εφαρμογή βασισμένη στην αρχιτεκτονική MEAN
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Το παρόν README αφορά το Μέρος Β.
 
-```bash
-ng generate --help
-```
+- Αρχιτεκτονική (MEAN)
 
-## Building
+Η εφαρμογή ακολουθεί αρχιτεκτονική client–server:
 
-To build the project run:
+*Backend*
 
-```bash
-ng build
-```
+Node.js, Express, MongoDB, Mongoose, REST API
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Ο server:
 
-## Running unit tests
+διαχειρίζεται τα δεδομένα (μαθήματα, βιβλία, βίντεο, χρήστες)
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+εκθέτει REST endpoints
 
-```bash
-ng test
-```
+δεν περιέχει καθόλου HTML
 
-## Running end-to-end tests
+*Frontend*
 
-For end-to-end (e2e) testing, run:
+Angular, Vite, HTTP Client
 
-```bash
-ng e2e
-```
+Ο client:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+αντλεί όλα τα δεδομένα μέσω API
 
-## Additional Resources
+δεν περιέχει hardcoded δεδομένα
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+χρησιμοποιεί routing για πλοήγηση (courses, course details κ.λπ.)
+
+Δομή έργου
+
+part-b-mean/
+│
+├── server/
+│   ├── package.json
+│   ├── .env
+│   └── src/
+│       ├── app.js
+│       ├── config/db.js
+│       ├── models/
+│       ├── controllers/
+│       └── routes/
+│
+├── client/
+│   ├── package.json
+│   ├── vite.config.js
+│   └── src/
+│       ├── main.ts
+│       ├── app/
+│       ├── pages/
+│       ├── services/
+│       └── assets/
+│
+└── README.md
+
+Οδηγίες Εγκατάστασης & Εκτέλεσης
+
+
+Για την εκτέλεση της εφαρμογής απαιτούνται:
+
+Node.js
+
+npm
+
+MongoDB 
+
+Εκκίνηση Backend (Server)
+Βήμα 1
+
+Μεταβείτε στον φάκελο του server:
+
+cd server
+
+Βήμα 2
+
+Εγκαταστήστε τα dependencies:
+
+npm install
+
+Βήμα 3
+
+Δημιουργήστε αρχείο .env με τα εξής περιεχόμενα:
+
+MONGODB_URI=mongodb://localhost:27017/elearning
+PORT=3000
+
+
+(ή MongoDB Atlas connection string)
+
+Βήμα 4
+
+Εκκινήστε τον server:
+
+npm run dev
+
+
+Ο server θα τρέχει στο:
+
+http://localhost:3000
+
+Εκκίνηση Frontend (Client)
+Βήμα 1
+
+Μεταβείτε στον φάκελο του client:
+
+cd client
+
+Βήμα 2
+
+Εγκαταστήστε τα dependencies:
+
+npm install
+
+Βήμα 3
+
+Εκκινήστε την εφαρμογή:
+
+npm start
+
+
+Ο client θα τρέχει στο:
+
+http://localhost:4200
+
+REST API Endpoints
+
+GET	/api/courses	Λίστα μαθημάτων
+GET	/api/courses/:id	Λεπτομέρειες μαθήματος
+GET	/api/books	Λίστα βιβλίων
+GET	/api/videos	Λίστα βίντεο
+POST	/api/users	Εγγραφή χρήστη
+
+Ροή Δεδομένων
+
+Ο χρήστης ανοίγει τη σελίδα στον browser
+
+Ο Angular client ζητά δεδομένα μέσω HTTP
+
+Ο Express server απαντά με JSON
+
+Τα δεδομένα αποθηκεύονται σε MongoDB
+
+Ο client ενημερώνει δυναμικά το UI
+
+Συμπεράσματα
+
+Το Μέρος Β αποτελεί πλήρη επέκταση του Μέρος Α σε πραγματική web εφαρμογή.
+Η εφαρμογή υλοποιεί:
+
+διαχωρισμό client / server
+
+RESTful αρχιτεκτονική
+
+δυναμική φόρτωση δεδομένων

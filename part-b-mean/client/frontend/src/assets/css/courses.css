@@ -158,7 +158,6 @@
     margin-bottom: 15px;
 }
 
-/* Κουμπί Learn More */
 .btn-secondary {
     display: inline-block;
     margin-top: 10px;
@@ -246,7 +245,6 @@ body.courses-page::before {
 }
 
 
-/* 🔥 FIX 1 — Σταθερό layout, ΟΧΙ auto collapse */
 .courses-hero {
     display: block !important;
     width: 100%;
@@ -255,7 +253,6 @@ body.courses-page::before {
     position: relative;
 }
 
-/* 🔥 FIX 2 — Μην μετακινείται το filter select */
 .filter-box {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -263,7 +260,6 @@ body.courses-page::before {
     z-index: 5;
 }
 
-/* 🔥 FIX 3 — ΚΑΝΟΝΙΚΟ select χωρίς jumping */
 .filter-select {
     margin: 0 !important;
     width: 100%;
@@ -274,7 +270,6 @@ body.courses-page::before {
     background-color: white;
 }
 
-/* 🔥 FIX 4 — ΠΡΟΛΑΜΒΑΝΕΙ ΤΟ “EMPTY FIRST RENDER” */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

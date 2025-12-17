@@ -172,7 +172,7 @@
     box-shadow: 0 4px 16px rgba(255, 150, 220, 0.25);
 }
 
-/* κείμενο δεξιά απο  εικόνα */
+
 .book-card-content {
     flex: 1;                  
     display: flex;
@@ -180,21 +180,18 @@
 }
 
 
-/* Τίτλος ΒΙΒΛΙΟΥ */
 .book-card h3 {
     color: #c927a0;
     font-size: 1.4rem;
     margin: 0 0 8px 0;
 }
 
-/* Περιγραφή  */
 .book-card-content .description {
     color: #444;
     margin-bottom: 10px;
 }
 
 
-/* Κατηγορία   */
 .category-tag {
      display: inline-block;
     background: #ffb3d9;
@@ -290,7 +287,7 @@ body.books-page::before {
     margin-bottom: 10px;
 }
 
-/* Κουμπί Watch Here */
+
 .btn-secondary {
     align-self: flex-start;
     background: linear-gradient(135deg, #89134e, #89134e58);
