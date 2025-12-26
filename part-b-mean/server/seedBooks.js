@@ -84,7 +84,7 @@ async function seedBooks() {
     await mongoose.connect(process.env.MONGODB_URI);
     await Book.deleteMany();
     await Book.insertMany(books);
-    console.log("📚 Books seeded successfully");
+    console.log("Books seeded successfully");
     process.exit();
   } catch (err) {
     console.error(err);
