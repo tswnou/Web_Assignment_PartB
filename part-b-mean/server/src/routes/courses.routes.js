@@ -3,10 +3,10 @@ import { getAllCourses, getCourseById } from "../controllers/courses.controller.
 
 const router = Router();
 
-// GET ALL COURSES
+//GET ALL COURSES
 router.get("/", getAllCourses);
 
-// GET COURSE BY ID (με id: 101, 102...)
+//GET COURSE BY ID
 router.get("/:id", getCourseById);
 
 export default router;

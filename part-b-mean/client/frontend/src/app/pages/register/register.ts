@@ -25,7 +25,7 @@ export class RegisterComponent {
 
   constructor(
     private api: ApiService,
-    private cdr: ChangeDetectorRef   // 🔥 ΠΡΟΣΘΗΚΗ
+    private cdr: ChangeDetectorRef 
   ) {}
 
   submitForm() {
@@ -49,7 +49,7 @@ export class RegisterComponent {
     this.api.registerUser(dataToSend).subscribe({
       next: () => {
         this.success = true;
-        this.cdr.detectChanges();   // 🔥 ΤΟ ΚΡΙΣΙΜΟ
+        this.cdr.detectChanges();
 
         this.formData = {
           firstName: '',

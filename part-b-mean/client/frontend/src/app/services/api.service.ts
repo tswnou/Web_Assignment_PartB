@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  // ----- COURSES -----
+  //  COURSES 
   getCourses(): Observable<any> {
     return this.http.get(`${this.BASE_URL}/courses`);
   }
@@ -20,17 +20,17 @@ export class ApiService {
     return this.http.get(`${this.BASE_URL}/courses/${id}`);
   }
 
-  // ----- BOOKS -----
+  //  BOOKS 
   getBooks(): Observable<any> {
     return this.http.get(`${this.BASE_URL}/books`);
   }
 
-  // ----- VIDEOS -----
+  //  VIDEOS 
   getVideos(): Observable<any> {
     return this.http.get(`${this.BASE_URL}/videos`);
   }
 
-  // ----- REGISTER USER -----
+  //  REGISTER USER
   registerUser(data: any): Observable<any> {
     return this.http.post(`${this.BASE_URL}/users`, data);
   }

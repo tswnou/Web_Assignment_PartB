@@ -1,9 +1,7 @@
 <section class="books-page">
 
-  <!-- MAIN -->
   <main class="container">
 
-    <!-- HERO -->
     <section class="books-hero">
 
       <h2 class="page-header">Books & Video Library</h2>
@@ -11,7 +9,6 @@
         Explore computer science textbooks, video tutorials and academic references.
       </p>
 
-      <!-- FILTER -->
       <div class="filter-box">
         <label for="categorySelect">Filter by Category:</label>
 
@@ -28,9 +25,7 @@
         </select>
       </div>
 
-      <!-- ========================= -->
-      <!-- RECOMMENDED BOOKS -->
-      <!-- ========================= -->
+   
       <section
         class="recommended-section recommended-books"
         *ngIf="selectedCategory === ALL_CATEGORIES"
@@ -78,9 +73,7 @@
         </div>
       </div>
 
-      <!-- ========================= -->
-      <!-- RECOMMENDED VIDEOS -->
-      <!-- ========================= -->
+     
       <section
         class="recommended-section"
         *ngIf="selectedCategory === ALL_CATEGORIES"
@@ -121,9 +114,7 @@
         </div>
       </section>
 
-      <!-- ========================= -->
-      <!-- ALL VIDEOS -->
-      <!-- ========================= -->
+   
       <div class="videos-grid">
         <div class="video-card" *ngFor="let video of filteredVideos">
           <img

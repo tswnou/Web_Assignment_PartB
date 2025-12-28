@@ -10,7 +10,7 @@ export const getAllCourses = async (req, res) => {
   }
 };
 
-// GET COURSE BY ID (custom id: 101, 102...)
+// GET COURSE BY ID 
 export const getCourseById = async (req, res) => {
   try {
     const course = await Course.findOne({ id: req.params.id });

@@ -45,12 +45,12 @@ export class BooksComponent implements OnInit {
         this.recommendedBooks = books.slice(0, 3);
         this.updateCategories();
         this.filterAll();
-        this.cdr.detectChanges(); // ✅
+        this.cdr.detectChanges(); 
       },
       error: () => {
         this.error = 'Failed to load books';
         this.loading = false;
-        this.cdr.detectChanges(); // ✅
+        this.cdr.detectChanges(); 
       }
     });
 
@@ -61,12 +61,12 @@ export class BooksComponent implements OnInit {
         this.updateCategories();
         this.filterAll();
         this.loading = false;
-        this.cdr.detectChanges(); // ✅
+        this.cdr.detectChanges(); 
       },
       error: () => {
         this.error = 'Failed to load videos';
         this.loading = false;
-        this.cdr.detectChanges(); // ✅
+        this.cdr.detectChanges();
       }
     });
   }

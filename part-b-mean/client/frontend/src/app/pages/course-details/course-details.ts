@@ -9,7 +9,6 @@ import { ApiService } from '../../services/api.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './course-details.html'
-  // ΔΕΝ βάζουμε styleUrls εδώ, τα styles έρχονται global από course-details.css
 })
 export class CourseDetailsComponent implements OnInit {
 

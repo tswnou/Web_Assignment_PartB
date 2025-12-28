@@ -3,6 +3,8 @@ import Video from "../models/Video.js";
 
 const router = Router();
 
+
+//get all videos
 router.get("/", async (req, res) => {
   try {
     const videos = await Video.find();
